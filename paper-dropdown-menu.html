@@ -167,9 +167,11 @@ contains the selection state.
       if (detail.isSelected) {
         this.$.label.classList.add('selectedItem');
         this.selectedItemLabel = detail.item.label || detail.item.textContent;
+		this.fire("core-select", detail);
       } else {
         this.$.label.classList.remove('selectedItem');
         this.selectedItemLabel = '';
+		this.fire("core-select", detail);
       }
     }
 
